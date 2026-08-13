@@ -1,0 +1,86 @@
+article {
+  padding: 1rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-metadata {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.post-body {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+.votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border-right: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.votes button {
+  border: none;
+  border-radius: 10%;
+  background: rgba(244, 243, 236, 0.5);
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding-bottom: 0.25rem;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.votes button:hover {
+  background: #007bff;
+  transform: scale(1.1);
+}
+
+.votes span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.post-content h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.post-content p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.post-content footer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  justify-content: center;
+}
+
+.post-content footer button {
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.post-content footer button:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}

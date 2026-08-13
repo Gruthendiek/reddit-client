@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header.jsx";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
+import PostCard from "./components/PostCard/PostCard.jsx";
 import "./App.css";
 
 function App() {
@@ -8,7 +9,9 @@ function App() {
       <Header />
       <div className="app-layout">
         <Sidebar />
-        <main>MAIN FEED</main>
+        <main>
+          <PostCard />
+        </main>
       </div>
     </>
   );

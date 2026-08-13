@@ -3,6 +3,16 @@
   grid-template-columns: 15.625rem 1fr;
   gap: 1rem;
   padding: 1rem;
+  align-items: start;
+}
+
+.main-feed {
+  padding: 0.5rem 1rem;
+  max-width: 50rem;
+}
+
+.main-feed h2 {
+  margin-bottom: 1.5rem;
 }
 
 @media (max-width: 768px) {

@@ -9,7 +9,11 @@ function App() {
       <Header />
       <div className="app-layout">
         <Sidebar />
-        <main>
+        <main className="main-feed">
+          <h2>Home Feed</h2>
+          <PostCard />
+          <PostCard />
+          <PostCard />
           <PostCard />
         </main>
       </div>

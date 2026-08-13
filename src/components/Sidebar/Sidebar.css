@@ -2,6 +2,8 @@
   padding: 1rem;
   border-right: 0.0625rem solid #ccc;
   border-radius: 0.5rem;
+  position: sticky;
+  top: 0;
 }
 
 .sidebar h2 {

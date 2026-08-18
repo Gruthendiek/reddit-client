@@ -6,6 +6,8 @@ const initialState = {
   posts: [],
   loading: false,
   error: null,
+  searchTerm: "",
+  sort: "best",
 };
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
@@ -22,6 +24,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
       postType: child.data.post_hint,
       mediaUrl: child.data.url,
       videoUrl: child.data.secure_media?.reddit_video?.fallback_url,
+      createdUtc: child.data.created_utc,
     };
   });
 
@@ -34,6 +37,12 @@ const postsSlice = createSlice({
   reducers: {
     setPosts(state, action) {
       state.posts = action.payload;
+    },
+    setSearchTerm(state, action) {
+      state.searchTerm = action.payload;
+    },
+    setSort(state, action) {
+      state.sort = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -54,4 +63,4 @@ const postsSlice = createSlice({
 });
 
 export default postsSlice.reducer;
-export const { setPosts } = postsSlice.actions;
+export const { setPosts, setSearchTerm, setSort } = postsSlice.actions;

@@ -16,6 +16,7 @@ article {
   grid-template-columns: 4rem 1fr;
   gap: 1rem;
   padding: 1.5rem 0;
+  align-items: center;
 }
 
 .votes {
@@ -59,6 +60,28 @@ article {
   margin: 0.5rem 0 0;
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 31.25rem;
+  object-fit: contain;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+}
+
+.post-video {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 31.25rem;
+  object-fit: contain;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
 }
 
 .post-content footer {

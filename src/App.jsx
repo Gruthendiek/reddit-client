@@ -9,8 +9,6 @@ import "./App.css";
 function App() {
   const data = fetchPopularPosts();
   const posts = data.data.children.map((child) => {
-    console.log(child.data.created_utc);
-
     return {
       title: child.data.title,
       subreddit: child.data.subreddit_name_prefixed,
@@ -18,7 +16,10 @@ function App() {
       content: child.data.selftext,
       score: child.data.score,
       comments: child.data.num_comments,
-      time: timeAgo(child.data.created_utc)
+      time: timeAgo(child.data.created_utc),
+      postType: child.data.post_hint,
+      mediaUrl: child.data.url,
+      videoUrl: child.data.secure_media?.reddit_video?.fallback_url
     };
   });
   return (
@@ -38,6 +39,9 @@ function App() {
               time={post.time}
               score={post.score}
               comments={post.comments}
+              postType={post.postType}
+              mediaUrl={post.mediaUrl}
+              videoUrl={post.videoUrl}
               key={index}
             />
           ))}

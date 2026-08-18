@@ -1,5 +1,6 @@
-import { fetchPopularPosts } from "./services/redditApi.js";
-import { timeAgo } from "./utilities/timeAgo.js";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchPosts } from "./features/posts/postsSlice.js";
 import Header from "./components/Header/Header.jsx";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import PostCard from "./components/PostCard/PostCard.jsx";
@@ -7,21 +8,13 @@ import FeedControls from "./components/FeedControls/FeedControls.jsx";
 import "./App.css";
 
 function App() {
-  const data = fetchPopularPosts();
-  const posts = data.data.children.map((child) => {
-    return {
-      title: child.data.title,
-      subreddit: child.data.subreddit_name_prefixed,
-      author: child.data.author,
-      content: child.data.selftext,
-      score: child.data.score,
-      comments: child.data.num_comments,
-      time: timeAgo(child.data.created_utc),
-      postType: child.data.post_hint,
-      mediaUrl: child.data.url,
-      videoUrl: child.data.secure_media?.reddit_video?.fallback_url
-    };
-  });
+  const posts = useSelector((state) => state.posts.posts);
+  const loading = useSelector((state) => state.posts.loading);
+  const error = useSelector((state) => state.posts.error);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, [dispatch]);
   return (
     <>
       <Header />
@@ -29,6 +22,8 @@ function App() {
         <Sidebar />
         <main className="main-feed">
           <h2>Home Feed</h2>
+          {loading && <p>Loading posts...</p>}
+          {error && <p>Failed to load post: {error}</p>}
           <FeedControls />
           {posts.map((post, index) => (
             <PostCard

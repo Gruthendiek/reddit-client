@@ -76,6 +76,14 @@ header {
     transform: scale(1.05);
 }
 
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-left: 3rem;
+}
+
+
 @media (max-width: 768px) {
     .header-search {
         display: none;

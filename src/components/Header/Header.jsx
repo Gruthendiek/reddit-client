@@ -9,13 +9,15 @@ export default function Header({ theme, onToggleTheme }) {
       <div className="header-search">
         <input type="text" placeholder="Search Reddit" />
         <button className="search-button">🔍</button>
-        <select>
-          <option value="">Sort</option>
-          <option value="best">Best</option>
-          <option value="hot">Hot</option>
-          <option value="new">New</option>
-          <option value="top">Top</option>
-        </select>
+        <div className="sort-control">
+          <label htmlFor="sortSelect">Sort by</label>
+          <select id="sortSelect">
+            <option value="best">Best</option>
+            <option value="hot">Hot</option>
+            <option value="new">New</option>
+            <option value="top">Top</option>
+          </select>
+        </div>
       </div>
       <div className="header-actions">
         <button className="profile-button">👤 Hi, Josh</button>

@@ -2,6 +2,10 @@
 
 Reddit Explorer is a React and Redux client for browsing a mock Reddit popular-feed dataset. It provides searchable, sortable posts, subreddit filtering, post details, pagination, and a dark/light theme toggle.
 
+## Live Demo
+
+[View the deployed application](https://redditexp.netlify.app/)
+
 ## Features
 
 * Browse the popular Reddit feed with loading and error states.

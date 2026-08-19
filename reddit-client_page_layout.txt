@@ -1,0 +1,365 @@
+# Reddit Client — Master Wireframe
+
+## 1. Desktop Layout
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                  HEADER                                     │
+│                                                                             │
+│  LOGO / BRAND   │   SEARCH REDDIT...   │ SORT │ PROFILE │ THEME             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  SIDEBAR                     │              MAIN FEED                       │
+│                              │                                              │
+│  HOME                        │  ┌────────────────────────────────────────┐  │
+│  POPULAR                     │  │                                        │  │
+│                              │  │              POST CARD                 │  │
+│  SUBREDDITS                  │  │                                        │  │
+│    • r/reactjs               │  └────────────────────────────────────────┘  │
+│    • r/javascript            │                                              │
+│    • r/memes                 │  ┌────────────────────────────────────────┐  │
+│    • r/askreddit             │  │                                        │  │
+│                              │  │              POST CARD                 │  │
+│  CREATE POST                 │  │                                        │  │
+│                              │  └────────────────────────────────────────┘  │
+│                              │                                              │
+│                              │  ┌────────────────────────────────────────┐  │
+│                              │  │                                        │  │
+│                              │  │              POST CARD                 │  │
+│                              │  │                                        │  │
+│                              │  └────────────────────────────────────────┘  │
+│                              │                                              │
+│                              │             [ LOAD MORE ]                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+---
+
+# 2. Desktop Header
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│  REDDIT EXPLORER   │   🔍 Search Reddit...   │  Sort ▼  │  👤  │  ☀/🌙    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+### Header components
+
+* **Logo / application name**
+* **Search input**
+* **Sort dropdown**
+* **Profile icon**
+* **Theme toggle**
+
+The search bar lives in the header on desktop, so we don't need a second search bar in the main feed.
+
+---
+
+# 3. Desktop Sidebar
+
+┌───────────────────────┐
+│                       │
+│  🏠 HOME              │
+│                       │
+│  🔥 POPULAR           │
+│                       │
+│  SUBREDDITS           │
+│                       │
+│    • r/reactjs        │
+│    • r/javascript     │
+│    • r/memes          │
+│    • r/askreddit      │
+│                       │
+│  ───────────────────  │
+│                       │
+│  ＋ CREATE POST       │
+│                       │
+└───────────────────────┘
+
+The sidebar provides our **predefined categories/subreddits**.
+
+---
+
+# 4. Post Card
+
+This is one of the most important components in the application.
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│  ↑ 123 ↓     r/reactjs • u/user • 3h ago                    │
+│                                                             │
+│  Post Title                                                 │
+│                                                             │
+│  Short preview of the post content goes here. This could    │
+│  contain text or a preview of an image/link.                │
+│                                                             │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │                                                       │  │
+│  │                    IMAGE / MEDIA                      │  │
+│  │                                                       │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                             │
+│  💬 45 Comments     ↗ Share     🔖 Save                    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+### Information displayed
+
+* Vote score
+* Subreddit
+* Author
+* Post age
+* Title
+* Content/media preview
+* Comment count
+* Share
+* Save
+
+---
+
+# 5. Post Details Page
+
+Clicking a post takes the user to a separate route.
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ HEADER                                                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ← Back                                                                     │
+│                                                                             │
+│  r/reactjs • u/user • 3h ago                                                │
+│                                                                             │
+│  Post Title                                                                 │
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                       │  │
+│  │                         POST CONTENT                                  │  │
+│  │                                                                       │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                             │
+│  ↑ 123 ↓       💬 45 Comments       ↗ Share       🔖 Save                  │
+│                                                                             │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│                                                                             │
+│  COMMENTS                                                                   │
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │ u/user1 • 2h ago                                                      │  │
+│  │                                                                       │  │
+│  │ This is an example comment...                                         │  │
+│  │                                                                       │  │
+│  │ 12 ↑   Reply                                                          │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │ u/user2 • 1h ago                                                      │  │
+│  │                                                                       │  │
+│  │ Another example comment...                                            │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+---
+
+# 6. Mobile Layout
+
+On mobile, the sidebar disappears.
+
+Instead, we use a bottom navigation.
+
+┌───────────────────────────────┐
+│  REDDIT EXPLORER          👤  │
+├───────────────────────────────┤
+│                               │
+│  🔍 Search Reddit...      🔍  │
+│                               │
+├───────────────────────────────┤
+│                               │
+│          POST CARD            │
+│                               │
+├───────────────────────────────┤
+│                               │
+│          POST CARD            │
+│                               │
+├───────────────────────────────┤
+│                               │
+│          POST CARD            │
+│                               │
+├───────────────────────────────┤
+│                               │
+│          POST CARD            │
+│                               │
+│                               │
+├───────────────────────────────┤
+│  🏠     🔥      🔍       👤  │
+│ Home   Popular  Search  Profile│
+└───────────────────────────────┘
+
+---
+
+# 7. Mobile Header
+
+┌───────────────────────────────┐
+│                               │
+│  REDDIT EXPLORER          👤  │
+│                               │
+└───────────────────────────────┘
+
+We'll keep the mobile header intentionally simple.
+
+---
+
+# 8. Mobile Search
+
+┌───────────────────────────────┐
+│                               │
+│  🔍  Search Reddit...      🔍 │
+│                               │
+└───────────────────────────────┘
+
+---
+
+# 9. Mobile Post Card
+
+┌───────────────────────────────┐
+│                               │
+│  ↑ 123 ↓                      │
+│  r/reactjs • u/user • 3h      │
+│                               │
+│  Post Title                   │
+│                               │
+│  ┌─────────────────────────┐  │
+│  │                         │  │
+│  │     IMAGE / PREVIEW     │  │
+│  │                         │  │
+│  └─────────────────────────┘  │
+│                               │
+│ 💬 45    ↗ Share    🔖 Save  │
+│                               │
+└───────────────────────────────┘
+
+---
+
+# 10. Mobile Bottom Navigation
+
+┌─────────────────────────────────┐
+│                                 │
+│   🏠       🔥       🔍       👤 │
+│  Home    Popular   Search  Profile
+│                                 │
+└─────────────────────────────────┘
+
+---
+
+# 11. Loading State
+
+We'll use a skeleton rather than simply displaying "Loading...".
+
+┌─────────────────────────────────┐
+│                                 │
+│  ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬              │
+│  ▬▬▬▬▬▬▬▬▬▬▬                    │
+│                                 │
+│  ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬              │
+│  ▬▬▬▬▬▬▬▬▬                      │
+│                                 │
+│  ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬              │
+│  ▬▬▬▬▬▬▬▬▬▬▬                    │
+│                                 │
+└─────────────────────────────────┘
+
+Later we'll animate these placeholders.
+
+---
+
+# 12. Error State
+
+┌─────────────────────────────────┐
+│                                 │
+│             ⚠️                  │
+│                                 │
+│      Something went wrong       │
+│                                 │
+│  We couldn't load the Reddit    │
+│  posts. Please try again.       │
+│                                 │
+│          [ TRY AGAIN ]          │
+│                                 │
+└─────────────────────────────────┘
+
+---
+
+# 13. Empty Search State
+
+┌─────────────────────────────────┐
+│                                 │
+│             🔍                  │
+│                                 │
+│       No posts found            │
+│                                 │
+│   Try searching for something   │
+│   else.                         │
+│                                 │
+└─────────────────────────────────┘
+
+---
+
+# 14. Overall Application Architecture
+
+This is the mental model I'd like you to keep throughout the project:
+
+                         REDDIT API
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │  Redux Store    │
+                    │                 │
+                    │ Posts           │
+                    │ Search          │
+                    │ Comments        │
+                    │ UI State        │
+                    └────────┬────────┘
+                             │
+                             ▼
+                       REACT APP
+                             │
+          ┌──────────────────┼──────────────────┐
+          │                  │                  │
+          ▼                  ▼                  ▼
+       HEADER             SIDEBAR           MAIN FEED
+          │                                     │
+          │                                     ▼
+          │                                POST LIST
+          │                                     │
+          │                                     ▼
+          │                                POST CARD
+          │                                     │
+          │                                     ▼
+          │                              POST DETAILS
+          │                                     │
+          │                                     ▼
+          │                                  COMMENTS
+          │
+          └────────────── Responsive ───────────┐
+                                                │
+                                                ▼
+                                        MOBILE NAVIGATION
+
+---
+
+# 15. The routes we'll eventually use
+
+I'm proposing:
+
+/                     → Home feed
+/post/:postId         → Post details
+
+Potentially later:
+
+/search/:query        → Search results
+
+But **we don't need to decide that one yet**.
+
+---
+
+## This is now our master reference
+

@@ -1,24 +1,28 @@
-import './Sidebar.css';
+import "./Sidebar.css";
 
-export default function Sidebar() {
+export default function Sidebar({ selectedCategory, onSelectCategory }) {
   return (
     <nav className="sidebar">
-      <button>HOME</button>
-      <button>POPULAR</button>
+      <button onClick={() => onSelectCategory("all")}>HOME</button>
+      <button onClick={() => onSelectCategory("all")}>POPULAR</button>
 
       <h2>SUBREDDITS</h2>
       <ul>
         <li>
-          <button>r/reactjs</button>
+          <button onClick={() => onSelectCategory("funny")}>r/funny</button>
         </li>
         <li>
-          <button>r/javascript</button>
+          <button onClick={() => onSelectCategory("technology")}>
+            r/technology
+          </button>
         </li>
         <li>
-          <button>r/memes</button>
+          <button onClick={() => onSelectCategory("memes")}>r/memes</button>
         </li>
         <li>
-          <button>r/askreddit</button>
+          <button onClick={() => onSelectCategory("askreddit")}>
+            r/askreddit
+          </button>
         </li>
       </ul>
       <button className="create-post-button">CREATE POST</button>

@@ -1,0 +1,96 @@
+.post-card {
+  cursor: pointer;
+}
+
+.post-card:focus-visible {
+  outline: 0.125rem solid #007bff;
+  outline-offset: 0.125rem;
+}
+
+.post-detail-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.post-detail-modal {
+  position: relative;
+  width: min(100%, 42rem);
+  max-height: min(90vh, 48rem);
+  overflow-y: auto;
+  padding: 2rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: var(--text);
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+
+.post-detail-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.75rem;
+  line-height: 1;
+  border-radius: 0.5rem;
+}
+
+.post-detail-close:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.post-detail-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-right: 2rem;
+  font-size: 0.875rem;
+}
+
+.post-detail-modal h2 {
+  margin: 1rem 0 0.75rem;
+}
+
+.post-detail-content {
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.post-detail-modal img,
+.post-detail-video {
+  display: block;
+  max-width: 100%;
+  max-height: 31.25rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+.post-detail-modal a {
+  overflow-wrap: anywhere;
+}
+
+.post-detail-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 0.0625rem solid var(--border);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .post-detail-modal {
+    padding: 1.5rem;
+  }
+}

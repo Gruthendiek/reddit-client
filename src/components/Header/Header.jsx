@@ -1,6 +1,6 @@
-import './Header.css'
+import "./Header.css";
 
-export default function Header() {
+export default function Header({ theme, onToggleTheme }) {
   return (
     <header>
       <div className="header-brand">
@@ -19,7 +19,14 @@ export default function Header() {
       </div>
       <div className="header-actions">
         <button className="profile-button">👤 Hi, Josh</button>
-        <button className="theme-toggle">☀️</button>
+        <button
+          className="theme-toggle"
+          onClick={onToggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+        >
+          {theme === "dark" ? "☀️" : "🌙"}
+        </button>
       </div>
     </header>
   );

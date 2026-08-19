@@ -26,12 +26,19 @@ export default function FeedControls() {
       <button type="submit" className="search-button">
         🔍
       </button>
-      <select onChange={(event) => dispatch(setSort(event.target.value))}>
-        <option value="best">Best</option>
-        <option value="hot">Hot</option>
-        <option value="new">New</option>
-        <option value="top">Top</option>
-      </select>
+      <div className="sort-control">
+        <label htmlFor="sortSelect">Sort by</label>
+        <select
+          id="sortSelect"
+          onChange={(event) => dispatch(setSort(event.target.value))}
+        >
+          {" "}
+          <option value="best">Best</option>
+          <option value="hot">Hot</option>
+          <option value="new">New</option>
+          <option value="top">Top</option>
+        </select>
+      </div>
     </form>
   );
 }

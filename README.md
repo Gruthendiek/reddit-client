@@ -1,16 +1,113 @@
-# React + Vite
+# Reddit Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reddit Explorer is a React and Redux client for browsing a mock Reddit popular-feed dataset. It provides searchable, sortable posts, subreddit filtering, post details, pagination, and a dark/light theme toggle.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Browse the popular Reddit feed with loading and error states.
+* Search posts by title, subreddit, author, or content.
+* Sort posts by Best, Hot, New, or Top.
+* Filter by the available subreddit categories in the sidebar.
+* Open a post detail modal and close it with the close button, backdrop, or Escape.
+* Load more posts in pages of ten.
+* Switch between dark and light themes. The application starts in dark mode.
+* Responsive layout that hides the sidebar on smaller screens.
 
-## React Compiler
+## Requirements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Node.js 18 or newer
+* npm
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Vite will print the local development URL, usually `http://localhost:5173`.
+
+## Available Commands
+
+| Command            | Description                                         |
+| ------------------ | --------------------------------------------------- |
+| `npm run dev`      | Start the Vite development server.                  |
+| `npm run build`    | Build the application for production.               |
+| `npm run preview`  | Preview the production build locally.               |
+| `npm run lint`     | Run ESLint across the project.                      |
+| `npm test`         | Run Jest and React Testing Library component tests. |
+| `npm run test:e2e` | Run Playwright end-to-end tests.                    |
+
+Playwright uses a local Vite server on `http://127.0.0.1:4173`. Install its browser once if needed:
+
+```bash
+npx playwright install chromium
+```
+
+## Testing
+
+Component tests are written with Jest and React Testing Library.
+
+End-to-end tests are written with Playwright and are located in `tests/e2e/`.
+
+Run the component tests with:
+
+```bash
+npm test
+```
+
+Run the end-to-end tests with:
+
+```bash
+npm run test:e2e
+```
+
+## Project Structure
+
+```text
+src/
+    app/store.js                 Redux store configuration
+    components/                  Header, sidebar, feed, post, and modal UI
+    features/posts/postsSlice.js Post state, filtering inputs, and async loading
+    services/redditApi.js        Reddit mock-data request
+    utilities/timeAgo.js         Relative post-time formatting
+    App.jsx                      Application layout and local UI state
+    index.css                    Global theme variables and layout defaults
+tests/e2e/                       Playwright browser tests
+mock-data/popular.json           Local reference dataset
+```
+
+## Wireframe
+
+The application was planned using a desktop and mobile wireframe before development.
+
+[View the wireframe](./reddit-client_page_layout.txt)
+
+## Data Source
+
+The application retrieves a mock Reddit popular-feed dataset hosted in the project's GitHub repository. The data is fetched from `mock-data/popular.json` through `src/services/redditApi.js` and transformed into the post structure used by the application.
+
+For offline development or changes to the feed, update `mock-data/popular.json` and keep its Reddit listing structure intact.
+
+## Technologies Used
+
+* React
+* Redux Toolkit
+* React Redux
+* JavaScript
+* HTML5
+* CSS3
+* Vite
+* Jest
+* React Testing Library
+* Playwright
+* Git/GitHub
+
+## Production Build
+
+Create and preview a production build with:
+
+```bash
+npm run build
+npm run preview
+```
